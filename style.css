@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F5F2;
+}
+.to-do-list {
+    text-align: center;
+}
+h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.to-do-list input {
+    width: 150px;
+    height: 30px;
+}
+.buttons {
+    width: 150px;
+    height: 30px;
+}
+.three-columns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.column {
+    width: 25%;
+    height: 50vh;
+    text-align: center;
+    background-color: blanchedalmond;
+}
+h2 {
+    box-shadow: 1px 0px 8px rgb(0 0 0 / 10%);
+}
