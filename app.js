@@ -5,8 +5,6 @@ let firstColumn = document.querySelector('.first-column');
 let inProg = document.getElementById('in-progress');
 let done = document.getElementById('done');
 
-
-
 send.addEventListener('click', function(){
     if(enter.value !== '') {
         taskList.appendChild(createElem());
@@ -28,9 +26,10 @@ function createElem() {
 function deleteElemBtn() {
     let delBtn = document.createElement('button');
     delBtn.className = "del-btn";
-    delBtn.append(document.createTextNode('Delete'));
+    delBtn.append(document.createTextNode('X'));
     delBtn.addEventListener('click', function(e) {
         e.path[1].remove();
+        console.log(e)
     })
     return delBtn;
 }
@@ -38,10 +37,10 @@ function deleteElemBtn() {
 function inProgressBtn() {
     let inProgBtn = document.createElement('button');
     inProgBtn.className = "prog-btn";
-    inProgBtn.append(document.createTextNode('inProgress'));
+    inProgBtn.append(document.createTextNode('→'));
     inProgBtn.addEventListener('click', function(e) {
         inProg.append(e.path[1]);
-        e.path[0].innerText = 'done';
+        e.path[0].innerText = '✓';
         if(e.path[2].id == "in-progress") {
             done.append(e.path[1]);
             e.path[0].remove();
