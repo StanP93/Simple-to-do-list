@@ -5,7 +5,7 @@ let firstColumn = document.querySelector('.first-column');
 let inProg = document.getElementById('in-progress');
 let done = document.getElementById('done');
 
-send.addEventListener('click', function(){
+send.addEventListener('click', function(e){
     if(enter.value !== '') {
         taskList.appendChild(createElem());
         enter.value = '';
@@ -28,8 +28,7 @@ function deleteElemBtn() {
     delBtn.className = "del-btn";
     delBtn.append(document.createTextNode('X'));
     delBtn.addEventListener('click', function(e) {
-        e.path[1].remove();
-        console.log(e)
+        e.srcElement.parentNode.remove();
     })
     return delBtn;
 }
@@ -39,13 +38,13 @@ function inProgressBtn() {
     inProgBtn.className = "prog-btn";
     inProgBtn.append(document.createTextNode('→'));
     inProgBtn.addEventListener('click', function(e) {
-        inProg.append(e.path[1]);
-        e.path[0].innerText = '✓';
-        if(e.path[2].id == "in-progress") {
-            done.append(e.path[1]);
-            e.path[0].remove();
+        if(e.srcElement.parentNode.parentNode.id == "in-progress") {
+            done.append(e.srcElement.parentNode);
+            e.srcElement.remove();
+        } else {
+            inProg.append(e.srcElement.parentNode);
+            e.srcElement.innerText = '✓';
         }
-        console.log(e)
     })
     return inProgBtn;
 }
