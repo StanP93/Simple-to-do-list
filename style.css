@@ -1,7 +1,12 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(/assets/fonts/Roboto/Roboto-Medium.ttf);
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Roboto",sans-serif;
 }
 body {
     display: flex;
@@ -35,5 +40,9 @@ h1 {
     background-color: blanchedalmond;
 }
 h2 {
+    box-shadow: 1px 0px 8px rgb(0 0 0 / 10%);
+}
+.list-elem {
+    padding: 10px;
     box-shadow: 1px 0px 8px rgb(0 0 0 / 10%);
 }

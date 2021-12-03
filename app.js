@@ -50,7 +50,3 @@ function inProgressBtn() {
     })
     return inProgBtn;
 }
-
-function doneBtn() {
-
-}
